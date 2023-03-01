@@ -38,9 +38,9 @@ fig.add_trace(go.Scatter(x=f88['Date'][-31:], y=f88['THUC_THU'][-31:],
 fig.update_layout(
     xaxis_tickformat = '%d %B (%a)'
 )
-# fig.update_layout(
-#       margin=dict(l=0, r=0, t=35, b=0),
-# )
+fig.update_layout(
+      margin=dict(t=35),
+)
 fig.update_xaxes(tickangle=90,tickmode='linear')
 
 st.plotly_chart(fig, use_container_width=True)
