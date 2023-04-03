@@ -13,7 +13,7 @@ st.set_page_config(page_title="Data Detail",
 st.title(":mag: Forecasting Data for March")
 st.markdown("##")
  
-df = pd.read_excel("EDA/CIMB_F88.xlsx")
+df = pd.read_excel("EDA/F88_CIMBt4.xlsx")
 df['Date'] = pd.to_datetime(df['Date']).dt.date
 pd.set_option('display.max_rows', None)
 st.dataframe(df)
