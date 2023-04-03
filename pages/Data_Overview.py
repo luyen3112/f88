@@ -10,7 +10,7 @@ st.set_page_config(page_title="Data Detail",
                 page_icon = ":pig:",
                 layout="wide")
                 
-st.title(":mag: Forecasting Data for March")
+st.title(":mag: Forecasting Data for April")
 st.markdown("##")
  
 df = pd.read_excel("EDA/F88_CIMBt4.xlsx")
