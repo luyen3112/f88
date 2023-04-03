@@ -14,11 +14,11 @@ st.set_page_config(page_title="Home Page",
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-st.title(":bar_chart: CIMB & F88 Forecasting for March")
+st.title(":bar_chart: CIMB & F88 Forecasting for April")
 st.markdown("##")
 
-cimb = pd.read_excel("EDA/cimb_t3.xlsx")
-f88 = pd.read_excel("EDA/f88_t3.xlsx")
+cimb = pd.read_excel("EDA/pred_cimbt4.xlsx")
+f88 = pd.read_excel("EDA/pred_f88t4.xlsx")
     # match = pd.read_parquet("EDA/match.parquet", engine = 'fastparquet')
     # data_loc = pd.read_parquet("EDA/a.parquet",engine = 'fastparquet')
     # data_loc_1 = pd.read_parquet("EDA/c.parquet",engine = 'fastparquet')
@@ -29,10 +29,10 @@ f88 = pd.read_excel("EDA/f88_t3.xlsx")
 cimb.dropna(inplace = True)
 
 fig = go.Figure()
-fig.add_trace(go.Scatter(x=cimb['Date'][-31:], y=cimb['THUC_THU'][-31:],
+fig.add_trace(go.Scatter(x=cimb['Date'], y=cimb['THUC_THU'],
                     mode='lines',
                     name='CIMB'))
-fig.add_trace(go.Scatter(x=f88['Date'][-31:], y=f88['THUC_THU'][-31:],
+fig.add_trace(go.Scatter(x=f88['Date'], y=f88['THUC_THU'],
                     mode='lines+markers',
                     name='F88'))
 fig.update_layout(
